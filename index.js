@@ -22,6 +22,13 @@ app.get("/rolldice", (req, res) => {
     res.render("rolldice.ejs");
 })
 
+
+app.get("/fb/:username", (req, res) => {
+
+    let { username } = req.params;
+    // res.send(`This is ${username}'s instagram Homepage`);
+    res.render("facebook.ejs", { username });
+})
 app.listen(port, () => {
 
     console.log(`Listening on port ${port}`);
