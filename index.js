@@ -20,16 +20,23 @@ app.get("/", (req, res) => {
 app.get("/rolldice", (req, res) => {
 
     res.render("rolldice.ejs");
-})
+});
 
 
-app.get("/fb/:username/followers", (req, res) => {
+app.get("/fb/:username", (req, res) => {
 
-    let { username,followers } = req.params;
+    const friends = ["hariom", "gaurisha", "shreesha", "amratansh"];
+    const followers = Math.floor(Math.random()*1000000)+1;
+    const no_Followers = 100000;
+
+
+    
+    let { username } = req.params;
 
     // res.send(`This is ${username}'s instagram Homepage`);
-    res.render("facebook.ejs", { username,followers });
-})
+    res.render("facebook.ejs", { username,friends,followers,no_Followers});
+});
+
 app.listen(port, () => {
 
     console.log(`Listening on port ${port}`);

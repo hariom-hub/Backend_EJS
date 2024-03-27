@@ -9,18 +9,31 @@
 
 <body>
     <h1><a href="https://www.facebook.com" target="_blank">Facebook</a></h1>
-    <h3>
-        <%= username %>
-    </h3>
-    <h4>Followers = <%= Math.floor(Math.random()*1000000)+1 %>
-    </h4>
-    <% if(followers>=1000000) { %>
+    <h2>
+        <%= username %> 
+    </h2>
 
-        <p>Verified </p>
-        <% }%>
-    <!-- <h5>Likes = <%= Math.floor(Math.random()*100000)+1 %></h5> -->
+    
+    <h5>followers = <%= followers %></h5>
+    <% if(followers >= no_Followers) {%>
+        <p>Verified&#10004;</p>
+        <% }else{ %>
+            <p>Unverified&#63;</p>
+        <% } %>
+            
+
     <button>Follow</button>
     <button>&hearts;</button>
+
+
+    <h2>Followers List : </h2>
+    <ul>
+        <% for(let name of friends){ %>
+            <li>
+                <%= name %>
+            </li>
+            <% } %>
+    </ul>
 </body>
 
 </html>
