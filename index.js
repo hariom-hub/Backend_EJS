@@ -28,12 +28,15 @@ app.get("/ig/:username", (req, res) => {
 
     let { username } = req.params;
     const instaData = require("./views/data.json");
+    const data = instaData[username];
     console.log(instaData);
+    console.log(data);
     const friends = ["hariom", "gaurisha", "shreesha", "amratansh"];
     const followers = Math.floor(Math.random() * 1000000) + 1;
     const no_Followers = 100000;
     // res.send(`This is ${username}'s instagram Homepage`);
-    res.render("facebook.ejs", { username, friends, followers, no_Followers });
+    // res.render("facebook.ejs", {data:instaData}[username]);
+    res.render("insta.ejs", { data });
 });
 
 app.listen(port, () => {
