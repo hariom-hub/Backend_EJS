@@ -25,18 +25,15 @@ app.get("/rolldice", (req, res) => {
 
 app.get("/ig/:username", (req, res) => {
 
+
+    let { username } = req.params;
     const instaData = require("./views/data.json");
     console.log(instaData);
     const friends = ["hariom", "gaurisha", "shreesha", "amratansh"];
-    const followers = Math.floor(Math.random()*1000000)+1;
+    const followers = Math.floor(Math.random() * 1000000) + 1;
     const no_Followers = 100000;
-
-
-    
-    let { username } = req.params;
-
     // res.send(`This is ${username}'s instagram Homepage`);
-    res.render("facebook.ejs", { username,friends,followers,no_Followers});
+    res.render("facebook.ejs", { username, friends, followers, no_Followers });
 });
 
 app.listen(port, () => {
