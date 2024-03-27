@@ -23,8 +23,10 @@ app.get("/rolldice", (req, res) => {
 });
 
 
-app.get("/fb/:username", (req, res) => {
+app.get("/ig/:username", (req, res) => {
 
+    const instaData = require("./views/data.json");
+    console.log(instaData);
     const friends = ["hariom", "gaurisha", "shreesha", "amratansh"];
     const followers = Math.floor(Math.random()*1000000)+1;
     const no_Followers = 100000;
