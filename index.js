@@ -23,11 +23,12 @@ app.get("/rolldice", (req, res) => {
 })
 
 
-app.get("/fb/:username", (req, res) => {
+app.get("/fb/:username/followers", (req, res) => {
 
-    let { username } = req.params;
+    let { username,followers } = req.params;
+
     // res.send(`This is ${username}'s instagram Homepage`);
-    res.render("facebook.ejs", { username });
+    res.render("facebook.ejs", { username,followers });
 })
 app.listen(port, () => {
 
